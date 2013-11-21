@@ -1,8 +1,9 @@
 Lulu
 ====
 
-An ambient piece of music written in csound.
+An calming piece of music written in csound.
 
+[soundcloud link](https://soundcloud.com/topher-saunders/lu-2-1)
 
 ## Dependencies 
 

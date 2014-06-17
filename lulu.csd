@@ -1,42 +1,42 @@
 <CsoundSynthesizer>
 <CsInstruments>
 
-sr	=	44100
-ksmps	=	1
-0dbfs	=	1
+sr  = 44100
+ksmps = 1
+0dbfs = 1
 nchnls = 2
-	gir 	ftgen	 10, 0, 8192, 10, 1 
-	gares 	init	 0
-instr 1	
+  gir   ftgen  10, 0, 8192, 10, 1 
+  gares   init   0
+instr 1 
 
-	aalfo poscil3 .3, 1.5, gir
+  aalfo poscil3 .3, 1.5, gir
   aalfo = aalfo * .2 + .5
-	
-	kblfo poscil3 .3, 1.3, gir
+  
+  kblfo poscil3 .3, 1.3, gir
   kblfo = kblfo * .2 + .5
 
-	kenv 	mxadsr	 .02, 2, 1, .9 
+  kenv  mxadsr   .02, 2, 1, .9 
 
-	ares 	foscili	 p4 * aalfo, cpsmidinn(p5), 1,1 , 2* kblfo*kenv, gir 
-	aenv 	mxadsr	 3, p3, 1, 3
+  ares  foscili  p4 * aalfo, cpsmidinn(p5), 1,1 , 2* kblfo*kenv, gir 
+  aenv  mxadsr   3, p3, 1, 3
   gares = ares * aenv
-	gares butlp gares, 200 
+  gares butlp gares, 200 
   outs gares, gares
 endin
 
 instr 2
 
-	aoutL, aoutR 	reverbsc	 gares, gares, .7, 9001
+  aoutL, aoutR  reverbsc   gares, gares, .7, 9001
 outs aoutL, aoutR
 clear gares
 endin
 
 instr 3
 
-	aadsr 	madsr	 .001, 1, .01, 1 
-	ares 	foscili	 p4 * aadsr, cpsmidinn(p5), 1, 1, 1, gir 
-	gares = ares
-	outs gares
+  aadsr   madsr  .001, 1, .01, 1 
+  ares  foscili  p4 * aadsr, cpsmidinn(p5), 1, 1, 1, gir 
+  gares = ares
+  outs gares
 endin
 
 </CsInstruments>

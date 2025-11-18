@@ -34,9 +34,9 @@ endin
 instr 3
 
   aadsr   madsr  .001, 1, .01, 1 
-  ares  foscili  p4 * aadsr, cpsmidinn(p5), 1, 1, 1, gir 
+  ares  foscili  p4 * aadsr * 0.02, cpsmidinn(p5), 1, 1, 1, gir 
   gares = ares
-  outs gares
+  outs gares, gares
 endin
 
 </CsInstruments>
@@ -67,17 +67,17 @@ i1 [30 + 40 * $CNT] 9 .2 74
 
 {80 CNT
 
-i3 [48 + 3 * $CNT ] 1 .4 60
-i3 [49 + 3 * $CNT ] 1 .4 67
-i3 [50 + 3 * $CNT ] 1 .4 69
+i3 [48 + 3 * $CNT ] .2 .4 60
+i3 [49 + 3 * $CNT ] .2 .4 67
+i3 [50 + 3 * $CNT ] .2 .4 69
 }
 
 {60 CNT
 
-i3 [80 + 4 * $CNT ] 1 .4 72
-i3 [81 + 4 * $CNT ] 1 .4 62
-i3 [82 + 4 * $CNT ] 1 .4 60
-i3 [83 + 4 * $CNT ] 1 .4 62
+i3 [80 + 4 * $CNT ] .2 .4 72
+i3 [81 + 4 * $CNT ] .2 .4 62
+i3 [82 + 4 * $CNT ] .2 .4 60
+i3 [83 + 4 * $CNT ] .2 .4 62
 }
 
 {20 CNT
@@ -89,4 +89,3 @@ i1 [126 + 8 * $CNT ] 2 .8 55
 }
 </CsScore>
 </CsoundSynthesizer>
-
